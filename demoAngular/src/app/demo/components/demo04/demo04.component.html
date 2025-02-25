@@ -1,0 +1,20 @@
+<p>{{title | uppercase}}</p>
+
+<h4>Sans Pipe</h4>
+<p>Aujourd'hui, nous sommes le {{today}} </p>
+
+<h4>Avec Pipe</h4>
+<p>Aujourd'hui, nous sommes le {{today | date }}</p>
+
+<h4>Avec Pipe et paramètre au Pipe</h4>
+<p>Aujourd'hui, nous sommes le {{today | date:"EEEE dd MMMM yyyy"}}</p>
+<p>Il est {{ today | date:"HH:mm"}}</p>
+
+<h4>Avec custom Pipe: reverseText</h4>
+<input type="text" [(ngModel)]="userInput">
+<p>{{userInput|reverseText}}<p>
+<p>{{userInput|reverseText |uppercase}}<p>
+
+<h4>Avec custom Pipe: mathPow</h4>
+<p>Le carré de 2 est {{2|mathPow}}<p>
+<p>Le cube de 2 est {{2|mathPow:3}}<p>
