@@ -7,5 +7,9 @@
 <h3>Event Binding</h3>
 <p>Ce bouton fait augmenter le compteur via le binding event</p>
 <button (click)="AddCount()">{{count}}</button>
+
+<h3>Attribute Binding</h3>
 <p>Ce bouton a la même action mais est désactivé à partir de 10 grâce à l'attribute binding</p>
 <button (click) = "AddCount()" [disabled]="count >=10">{{count}}</button>
+
+<p [style]="{'font-size': (count+10)+ 'px'}">Ce texte grandit selon la valeur du compteur</p>
