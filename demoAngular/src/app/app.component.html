@@ -1,16 +1,22 @@
 <header>
   <h1>Demo Angular</h1>
   <h2>Interface3 - wad24</h2>
-  <nav>
-    <ul>
+  <!-- <nav> -->
+    <!-- <ul>
       <li><a routerLink ="/demo">Section: Demonstrations</a></li>
       <li><a routerLink="/">Section : Home</a></li>
-      <!-- On n'utilise pas "/home" car après le "/" on doit mettre le nom du module. Home est un component faisant partie du app.module donc il ne faut rien mettre après le  "/" -->
-    </ul>
-  </nav>
+       On n'utilise pas "/home" car après le "/" on doit mettre le nom du module. Home est un component faisant partie du app.module donc il ne faut rien mettre après le  "/" -->
+    <!-- </ul> -->
+  <!-- </nav> --> 
 </header>
 <main>
-  <router-outlet></router-outlet>
+  <!-- Composant devant apparaître d'office, on utilise alors le nom du composant à appeler -->
+  <div class="navbar">
+    <app-nav-menu></app-nav-menu> 
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 </main>
 <footer>
   <p>Interface3</p>

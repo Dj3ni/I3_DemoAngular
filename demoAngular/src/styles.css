@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    padding: 0 20px 0 0;
+    background: #ecf0f1; /* Couleur de fond */
+  }
+
+.navbar {
+    display:flex;
+}
+
+.content {
+    padding: 0 15px;
+}
