@@ -1,0 +1,8 @@
+<p>chrono works!</p>
+
+<p>{{minutes |number:"2.0"}} : {{seconds | number:"2.0"}}</p>
+
+<button *ngIf="!isRunning" (click)="StartChrono()">Start</button>
+<button *ngIf="isRunning && !isPaused" (click)="PauseChrono()">Pause</button>
+<button *ngIf="isPaused" (click)="StartChrono()">Reprendre</button>
+<button *ngIf="isRunning" (click)="StopChrono()">Stop</button>

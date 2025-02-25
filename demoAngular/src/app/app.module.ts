@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { ChronoComponent } from './exercice/components/chrono/chrono.component';
 
 @NgModule({
   declarations: [
