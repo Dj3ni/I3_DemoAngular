@@ -1,12 +1,11 @@
-<p>chrono works!</p>
+<h3>Exercice 3 : Chrono</h3>
+<p>Mettre en place un chronomètre
+    - 3 Boutons : Start, Pause, Reset (actif/inactif en fonction des besoins)
+    - Affichage “xx minutes xx secondes”
+    Astuce : cherchez du côté de setInterval() et du string Interpolation de Typescript</p>
 
 <p>{{minutes | number:"2.0"}} : {{seconds | number:"2.0"}}</p>
-<p>{{ seconds | chronoFormat }}</p>
 
-<!-- Correction -->
- <button (click)="onStart()" [disabled]="intervalId">StartCorrection</button>
- <button (click)="onPause()" [disabled]="!intervalId">PauseCorrection</button>
- <button (click)="onPause()" [disabled]="!intervalId">ResetCorrection</button>
 
 
 <!-- On n'a pas encore vu cette mantière:  -->
@@ -14,3 +13,12 @@
 <button *ngIf="isRunning && !isPaused" (click)="PauseChrono()">Pause</button>
 <button *ngIf="isPaused" (click)="StartChrono()">Reprendre</button>
 <button *ngIf="isRunning" (click)="StopChrono()">Stop</button>
+
+
+<!-- Correction -->
+
+<h4>Correction: </h4>
+<p>{{ seconds | chronoFormat }}</p>
+<button (click)="onStart()" [disabled]="intervalId">StartCorrection</button>
+<button (click)="onPause()" [disabled]="!intervalId">PauseCorrection</button>
+<button (click)="onPause()" [disabled]="!intervalId">ResetCorrection</button>
