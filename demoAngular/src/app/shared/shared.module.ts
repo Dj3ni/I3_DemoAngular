@@ -5,6 +5,7 @@ import { ReverseTextPipe } from './pipes/reverse-text.pipe';
 import { FormsModule } from '@angular/forms';
 import { ChronoFormatPipe } from './pipes/chrono-format.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { ToggleChildMenuDirective } from './directives/toggle-child-menu.directive';
 
 
 
@@ -13,7 +14,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     MathPowPipe,
     ReverseTextPipe,
     ChronoFormatPipe,
-    HighlightDirective
+    HighlightDirective,
+    ToggleChildMenuDirective
   ],
   imports: [
     CommonModule,

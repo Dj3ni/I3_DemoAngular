@@ -40,4 +40,24 @@ export class NavMenuComponent {
       link.isVisible = !link.isVisible;
     }
 
+      /* Correction */
+    linksCorrection : ILink[] = [
+       {title : "Home", url:"/", isVisible:true},
+       {title : "Demos", url:"/demo", children:[
+          {title:"Component1", url:"/demo/demo01", isVisible:true},
+          {title:"Component2", url:"/demo/demo02", isVisible:true},
+          {title:"Le binding", url:"/demo/demo03", isVisible:true},
+          {title:"Les pipes", url:"/demo/demo04", isVisible:true},
+          {title:"Les directives", url:"/demo/demo05", isVisible:true}
+
+      ], isVisible: true},
+       {title : "Exercices", url:"/exercise", children:[
+          {title:"Modules", url:"/exercise/exe01", isVisible:true},
+          {title:"Directives", url:"/exercise/exe02", isVisible:true},
+          {title:"Chrono", url:"/exercise/chrono", isVisible:true}
+
+       ], isVisible: true}
+
+    ]
+
 }
