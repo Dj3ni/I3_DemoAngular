@@ -9,7 +9,7 @@
             <ng-container *ngIf="link.isVisible">
                 <ul *ngFor="let child of link.children">
                     <li>
-                        <a routerLink="{{child.url}}">{{child.title}}</a>
+                        <a routerLink="{{child.url}}" [ngStyle]="{fontSize: '14px'}">{{child.title}}</a>
                     </li>
                 </ul>
             </ng-container>
