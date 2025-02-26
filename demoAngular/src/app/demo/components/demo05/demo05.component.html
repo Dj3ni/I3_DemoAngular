@@ -1,0 +1,84 @@
+<h1>Les directives</h1>
+
+<h2>Component Directives</h2>
+<h3>NgStyle</h3>
+
+<p [ngStyle]="{color: (stock <= 5)? 'red' : 'green'}">{{stock}}</p>
+<button (click)="subStock()" [disabled]="stock <= 0">Diminuer le stock</button>
+
+<br>
+<p>Ici le chiffre sélectionné va changer le pourcentage d'arrondissement des bords du carré</p>
+<input id = "roundPercent" type="range" min="0" max="50" step="10" [(ngModel)]="roundPercent">
+<label for="roundPercent">{{roundPercent}}</label>
+<div [ngStyle]="{backgroundColor:'blue', borderRadius: roundPercent+'%', width:'50px', height :'50px'}"></div>
+
+<h3>NgClass</h3>
+
+<p>Ici le chiffre sélectionné va changer les classes de l'élément</p>
+<p>Selected number : {{selectedNumber}}</p>
+<input type="range" min="0" max="20" step="1" [(ngModel)] = "selectedNumber">
+<div [ngClass]="{square:true, divTwo:selectedNumber % 2 == 0, divThree: selectedNumber % 3 == 0, divFive: selectedNumber % 5 == 0}"></div>
+
+<h2>Structural Directives</h2>
+<p>Attention les directives structurelles utilisent toujours une "*" comme premier caractère</p>
+<h3>*ngIf</h3>
+
+<input type="checkbox" [(ngModel)] ="checkedBox">
+<p *ngIf="checkedBox; else notChecked">Notre case est bien cochée, cette balise apparaît</p>
+<!-- Revient au même que de faire appel à une balise *ngElse -->
+<p *ngIf="!checkedBox">Notre case est décochée, du coup cette balise apparaît</p>
+
+<ng-template #notChecked>
+     <!--Ici on crée un id Angular -->
+    <p>Je suis une balise cachée que l'on ne voit que lorsqu'on m'appelle</p>
+</ng-template>
+
+<h3>*ngFor</h3>
+<p>Ici on utilise cette méthode afin d'itérer dans une liste et d'y appliquer un comportement</p>
+
+<h4>Sans indice numérique</h4>
+
+<ol *ngIf="list.length > 0; else noList">
+    <li *ngFor="let value of list">{{value}}
+        <button (click)="delUserValue(value)">supprimer</button>
+    </li>
+</ol>
+<ng-template #noList>
+    <p>La liste est vide</p>
+</ng-template>
+
+<h4>Avec indice numérique</h4>
+<ol *ngIf="list.length > 0; else noList">
+    <li *ngFor="let value of list; let i = index">{{value}}
+        <button (click)="delUserIndex(i)">supprimer</button>
+    </li>
+</ol>
+
+<p>On rajoute des éléments dans la liste</p>
+<div>
+    <input type="text" [(ngModel)] ="newUserValue">
+    <button (click)="addNewUserValue()">Ajouter</button>
+</div>
+
+<h3>[ngSwitch] |*ngSwitchCase | $ngSwitchDefault</h3>
+
+<p>Va changer la structure du html selon si égal à 2 / 3 / 5</p>
+<p>Selected number : {{selectedNumber}}</p>
+<input type="range" min="0" max="20" step="1" [(ngModel)] = "selectedNumber">
+
+<p [ngSwitch]="selectedNumber">
+    <span *ngSwitchCase="2">La valeur de selected number est 2</span>
+    <span *ngSwitchCase="3">La valeur de selected number est 3</span>
+    <span *ngSwitchCase="5">La valeur de selected number est 5</span>
+    <span *ngSwitchDefault>La valeur de selected number n'est pas 2, 3 ou 5</span>
+</p>
+
+<h4>*ng-container</h4>
+<ul>
+    <ng-container *ngFor="let value of nbList">
+        <li *ngIf ="value %2 == 0">{{value}}</li>
+    </ng-container>
+</ul>
+
+<h3>Custom Directives (attributes)</h3>
+<p>Nous avons créé une directive <span appHighlight>"Highlight" </span>afin de travailler des éléments de texte </p>
