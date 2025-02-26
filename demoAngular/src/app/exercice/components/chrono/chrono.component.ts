@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class ChronoComponent {
   public minutes : number = 0;
   public seconds : number = 0;
-  private intervalId: any = null;
+  public intervalId: any = null; // plutôt utiliser undefined
   public isRunning : boolean = false;
   public isPaused : boolean = false;
   
@@ -44,4 +44,31 @@ export class ChronoComponent {
     this.isRunning = false;
   }
   
+
+  // Correction:
+
+
+  public onStart():void{
+    if (this.intervalId) throw new Error('Already running');//faire une erreur pour développeur 
+    this.intervalId = setInterval(
+      () => this.addSecond(),
+      1000
+    );
+  }
+
+  private addSecond():void {
+    this.seconds++;
+  }
+
+  public onPause():void{
+    if(this.intervalId){
+      clearInterval(this.intervalId);
+      this.intervalId = undefined;
+    }
+  }
+
+  public onReset():void {
+    if(this.seconds == 0) throw new Error("Already Initial value");
+    if(this.seconds > 0) this.seconds = 0;
+  }
 }

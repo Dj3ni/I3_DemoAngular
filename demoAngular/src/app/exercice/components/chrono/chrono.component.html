@@ -1,7 +1,15 @@
 <p>chrono works!</p>
 
-<p>{{minutes |number:"2.0"}} : {{seconds | number:"2.0"}}</p>
+<p>{{minutes | number:"2.0"}} : {{seconds | number:"2.0"}}</p>
+<p>{{ seconds | chronoFormat }}</p>
 
+<!-- Correction -->
+ <button (click)="onStart()" [disabled]="intervalId">StartCorrection</button>
+ <button (click)="onPause()" [disabled]="!intervalId">PauseCorrection</button>
+ <button (click)="onPause()" [disabled]="!intervalId">ResetCorrection</button>
+
+
+<!-- On n'a pas encore vu cette mantière:  -->
 <button *ngIf="!isRunning" (click)="StartChrono()">Start</button>
 <button *ngIf="isRunning && !isPaused" (click)="PauseChrono()">Pause</button>
 <button *ngIf="isPaused" (click)="StartChrono()">Reprendre</button>
