@@ -23,7 +23,8 @@ export class NavMenuComponent {
       {title : "Exercices", url:"/exercise", children:[
         {title:"Modules", url:"/exercise/exe01"},
         {title:"Directives", url:"/exercise/exe02"},
-        {title:"Chrono", url:"/exercise/chrono"}
+        {title:"Chrono", url:"/exercise/chrono"},
+        {title:"Cart", url:"/exercise/cart"}
 
       ], isVisible: false}
 

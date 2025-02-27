@@ -1,0 +1,20 @@
+<table *ngIf="shoplist && shoplist.length > 0 else nolist">
+    <thead>
+        <tr>
+            <th>Article</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of shoplist">
+            <td>{{product}}</td>
+            <td>
+                <button (click)="onRemove(product)"> X </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #nolist>
+    <p>La liste est vide <br> en ajouter un? </p>
+</ng-template>

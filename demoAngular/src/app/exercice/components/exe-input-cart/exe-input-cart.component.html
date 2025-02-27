@@ -1,0 +1,15 @@
+<h1>Exe Input - Output</h1>
+<p>Mettre en place une shopping list en deux composant.
+    Dans le premier, un champ texte permettant l’ajout d’un article à la liste
+    Dans le deuxième, l’affichage de la liste et la possibilité de supprimer un article.
+    Les deux composant doivent être afficher sur la même page</p>
+
+
+ <h3>Cart component</h3>
+ <!-- <p>{{shopList | json}}</p> -->
+ 
+ <h3>Cart child component</h3>
+
+ <app-exe-input-add-to-cart (productNameEmmitter)="addProductToShopList($event)"></app-exe-input-add-to-cart>
+
+ <app-shoplist [shoplist]="shopList" (productRemoveEmitter)="removeProduct($event)"></app-shoplist>
