@@ -12,6 +12,9 @@ import { SharedModule } from '../shared/shared.module';
 import { Demo05Component } from './components/demo05/demo05.component';
 import { Demo06ParentComponent } from './components/demo06-parent/demo06-parent.component';
 import { Demo06EnfantComponent } from './components/demo06-enfant/demo06-enfant.component';
+import { Demo07Component } from './components/demo07/demo07.component';
+import { Demo07InputsComponent } from './components/demo07-inputs/demo07-inputs.component';
+import { Demo07OutputsComponent } from './components/demo07-outputs/demo07-outputs.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { Demo06EnfantComponent } from './components/demo06-enfant/demo06-enfant.
     Demo05Component,
     Demo06ParentComponent,
     Demo06EnfantComponent,
+    Demo07Component,
+    Demo07InputsComponent,
+    Demo07OutputsComponent,
   ],
   imports: [
     CommonModule,
