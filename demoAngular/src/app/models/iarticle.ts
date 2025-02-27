@@ -1,5 +1,6 @@
 export interface IArticle {
     title: string;
-    price : number;
+    // price : number;
+    quantity : number
     
 }

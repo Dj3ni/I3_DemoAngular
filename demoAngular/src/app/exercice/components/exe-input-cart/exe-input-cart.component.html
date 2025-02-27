@@ -4,12 +4,20 @@
     Dans le deuxième, l’affichage de la liste et la possibilité de supprimer un article.
     Les deux composant doivent être afficher sur la même page</p>
 
+<h3>Exercice Service</h3>
+<p>Optimiser la liste de course avec l’utilisation d’un service qui gère la liste et les
+    méthodes qui peuvent s’y appliquer
+    Ajouter la possibilité de gérer le nombre d’articles voulu (Ex : Lait x 6, Tomates x 3, …)</p>
+
 
  <h3>Cart component</h3>
  <!-- <p>{{shopList | json}}</p> -->
  
+
+ 
  <h3>Cart child component</h3>
 
+ <h4>🛒 Ajouter un article</h4>
  <app-exe-input-add-to-cart (productNameEmmitter)="addProductToShopList($event)"></app-exe-input-add-to-cart>
 
  <app-shoplist [shoplist]="shopList" (productRemoveEmitter)="removeProduct($event)"></app-shoplist>

@@ -10,6 +10,9 @@ import { SharedModule } from '../shared/shared.module';
 import { ExeInputAddToCartComponent } from './components/exe-input-add-to-cart/exe-input-add-to-cart.component';
 import { ExeInputCartComponent } from './components/exe-input-cart/exe-input-cart.component';
 import { ShoplistComponent } from './components/shoplist/shoplist.component';
+import { ShoplistV2Component } from './components/shoplist-v2/shoplist-v2.component';
+import { CartV2Component } from './components/cart-v2/cart-v2.component';
+import { AddToCartV2Component } from './components/add-to-cart-v2/add-to-cart-v2.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { ShoplistComponent } from './components/shoplist/shoplist.component';
     ChronoComponent,
     ExeInputAddToCartComponent,
     ExeInputCartComponent,
-    ShoplistComponent
+    ShoplistComponent,
+    ShoplistV2Component,
+    CartV2Component,
+    AddToCartV2Component
   ],
   imports: [
     CommonModule,
