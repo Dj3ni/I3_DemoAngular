@@ -26,7 +26,8 @@ import { ToggleChildMenuDirective } from './directives/toggle-child-menu.directi
     ReverseTextPipe,
     MathPowPipe,
     ChronoFormatPipe,
-    HighlightDirective
+    HighlightDirective,
+    ToggleChildMenuDirective
   ]
 })
 export class SharedModule { 

@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appToggleChildMenu]',
@@ -6,6 +6,11 @@ import { Directive } from '@angular/core';
 })
 export class ToggleChildMenuDirective {
 
-  constructor() { }
+  constructor(private _htmlElement : ElementRef) { }
 
+  @HostListener('click')
+  public onClick():void {
+    const html_childMenu = this._htmlElement.nativeElement.querySelector("ul.childMenu");
+    html_childMenu.classList.toggle("hiddenMenu");    
+  }
 }

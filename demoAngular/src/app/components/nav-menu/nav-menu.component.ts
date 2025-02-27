@@ -16,7 +16,8 @@ export class NavMenuComponent {
         {title:"Component2", url:"/demo/demo02"},
         {title:"Le binding", url:"/demo/demo03"},
         {title:"Les pipes", url:"/demo/demo04"},
-        {title:"Les directives", url:"/demo/demo05"}
+        {title:"Les directives", url:"/demo/demo05"},
+        {title:"Les Input", url:"/demo/demo06", isVisible:true}
 
       ], isVisible: false},
       {title : "Exercices", url:"/exercise", children:[
@@ -44,17 +45,19 @@ export class NavMenuComponent {
     linksCorrection : ILink[] = [
        {title : "Home", url:"/", isVisible:true},
        {title : "Demos", url:"/demo", children:[
-          {title:"Component1", url:"/demo/demo01", isVisible:true},
-          {title:"Component2", url:"/demo/demo02", isVisible:true},
-          {title:"Le binding", url:"/demo/demo03", isVisible:true},
-          {title:"Les pipes", url:"/demo/demo04", isVisible:true},
-          {title:"Les directives", url:"/demo/demo05", isVisible:true}
+          {title:"Component1", url:"demo01", isVisible:true},
+          {title:"Component2", url:"demo02", isVisible:true},
+          {title:"Le binding", url:"demo03", isVisible:true},
+          {title:"Les pipes", url:"demo04", isVisible:true},
+          {title:"Les directives", url:"demo05", isVisible:true},
+          {title:"Input-Output", url:"demo06", isVisible:true}
+
 
       ], isVisible: true},
        {title : "Exercices", url:"/exercise", children:[
-          {title:"Modules", url:"/exercise/exe01", isVisible:true},
-          {title:"Directives", url:"/exercise/exe02", isVisible:true},
-          {title:"Chrono", url:"/exercise/chrono", isVisible:true}
+          {title:"Modules", url:"exe01", isVisible:true},
+          {title:"Directives", url:"exe02", isVisible:true},
+          {title:"Chrono", url:"chrono", isVisible:true}
 
        ], isVisible: true}
 

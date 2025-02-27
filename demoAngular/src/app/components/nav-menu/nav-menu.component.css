@@ -13,12 +13,12 @@ aside ul {
     padding: 0;
 }
 
-aside ul li {
+li {
     list-style: none;
     text-decoration: none;
 }
 
-aside ul li a {
+a {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -28,6 +28,6 @@ aside ul li a {
     transition: background 0.3s;
 }
 
-aside ul li a:hover {
+a:hover {
     background: rgba(255, 255, 255, 0.2);
 }

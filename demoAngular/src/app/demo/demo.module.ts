@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { Demo04Component } from './components/demo04/demo04.component';
 import { SharedModule } from '../shared/shared.module';
 import { Demo05Component } from './components/demo05/demo05.component';
+import { Demo06ParentComponent } from './components/demo06-parent/demo06-parent.component';
+import { Demo06EnfantComponent } from './components/demo06-enfant/demo06-enfant.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { Demo05Component } from './components/demo05/demo05.component';
     Demo03Component,
     Demo04Component,
     Demo05Component,
+    Demo06ParentComponent,
+    Demo06EnfantComponent,
   ],
   imports: [
     CommonModule,
