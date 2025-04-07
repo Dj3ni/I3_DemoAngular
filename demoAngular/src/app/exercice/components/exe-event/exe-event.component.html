@@ -1,0 +1,37 @@
+<h1>Exe event</h1>
+<p>Création d'événement (anniversaire, fête, etc.) :
+    L'utilisateur doit introduire un nom de 2 à 16 caractères.
+    L'utilisateur doit introduire une description non obligatoire, mais si présente, de moins de 512 caractères (avec multilignes).
+        
+    L'utilisateur doit introduire une date, par défaut, la date d'aujourd'hui est proposée.
+        
+    L'utilisateur à le droit de cocher une case "Journée entière".
+    Si tel est le cas, l'utilisateur ne doit pas introduire d'heure, sinon, obligation d'introduire l'heure de début et l'heure de fin.
+        
+    Le formulaire doit prévenir de tout problème de contenu, empêcher la validation si non valide.
+</p>
+
+<form>
+    <fieldset>
+        <legend>Creation d'évènement</legend>
+        <div>
+            <label for="">Nom de l'évènement *</label>
+            <input type="text" id="">
+        </div>
+        <div>
+            <label for="">Description</label>
+            <textarea type="text"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" id="allDay">
+            <label for="allDay">Journée entière</label>
+        </div>
+        <div *ngIf="">
+            <label for="">Date *</label>
+            <input type="datetime-local">
+        </div>        
+    </fieldset>
+    <button type="submit" onsubmit="submit()">Créer l'évènement</button>
+
+</form>
+

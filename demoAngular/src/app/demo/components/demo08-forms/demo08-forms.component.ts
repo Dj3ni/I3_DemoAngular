@@ -22,7 +22,8 @@ export class Demo08FormsComponent {
   }
 
   public SubmitForm() : void {
-    console.log(this.myForm.value);
+    if(!this.myForm.valid) throw new Error('Formulaire invalide');
+    console.log(JSON.stringify(this.myForm.value));
   }
 
   public getGuestArray():FormArray{

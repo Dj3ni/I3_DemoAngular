@@ -22,11 +22,13 @@ export class NavMenuComponent {
         {title:"Les Formulaires", url:"/demo/demo08"}
 
       ], isVisible: false},
+      
       {title : "Exercices", url:"/exercise", children:[
         {title:"Modules", url:"/exercise/exe01"},
         {title:"Directives", url:"/exercise/exe02"},
         {title:"Chrono", url:"/exercise/chrono"},
-        {title:"Cart", url:"/exercise/cart"}
+        {title:"Cart", url:"/exercise/cart"},
+        {title:"Event", url:"/exercise/event"},
 
       ], isVisible: false}
 

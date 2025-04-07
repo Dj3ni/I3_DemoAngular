@@ -21,12 +21,14 @@
 
 <fieldset formArrayName="guests">
     <legend>Accompagnants</legend>
-    <button (click)="addNewGuestForm()">+</button>
+    <button (click)="addNewGuestForm()" type="button">+</button>
     <fieldset *ngFor="let guestForm of getGuestArray().controls; let i = index">
         <legend>Accompagnant {{i+1}}</legend>
         <div [formGroupName]="i">
             <label [for]="'guest-' +i+' -fn'">Firstname</label>
             <input type="text" [id]="'guest-' +i +'-fn'" formControlName="firstname">
+            <p style="color:red;" 
+            *ngIf="myForm.controls['firstname']?.getError('required') && !myForm.controls['firstname'].pristine">Firstname field is required</p>
             <div>
                 <label [for]="'guest- + i +-ln'">Lastname</label>
                 <input type="text" [id]="'guest-' +i+' -ln'" formControlName="lastname">

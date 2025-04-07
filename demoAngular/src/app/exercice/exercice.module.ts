@@ -13,6 +13,8 @@ import { ShoplistComponent } from './components/shoplist/shoplist.component';
 import { ShoplistV2Component } from './components/shoplist-v2/shoplist-v2.component';
 import { CartV2Component } from './components/cart-v2/cart-v2.component';
 import { AddToCartV2Component } from './components/add-to-cart-v2/add-to-cart-v2.component';
+import { ExeEventComponent } from './components/exe-event/exe-event.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,12 +28,14 @@ import { AddToCartV2Component } from './components/add-to-cart-v2/add-to-cart-v2
     ShoplistComponent,
     ShoplistV2Component,
     CartV2Component,
-    AddToCartV2Component
+    AddToCartV2Component,
+    ExeEventComponent
   ],
   imports: [
     CommonModule,
     ExerciceRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule    
   ]
 })
 export class ExerciceModule { }
