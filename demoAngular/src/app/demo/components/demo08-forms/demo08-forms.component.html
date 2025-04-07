@@ -1,0 +1,42 @@
+<h1>Démo 08: Les formulaires</h1>
+
+<h2>React forms</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="SubmitForm()">
+    <fieldset>
+        <legend>Responsable</legend>
+    <div>
+        <label for="firstname">Firstname</label>
+        <input type="text" id ="firstname" formControlName="firstname">
+    </div>
+    <div>
+        <label for="lastname">Lastname</label>
+        <input type="text" id="lastname" formControlName="lastname">
+    </div>
+    <div>
+        <label for="birthdate">Birthdate</label>
+        <input type="date" id="birthdate" formControlName="birthdate">
+    </div>
+</fieldset>
+
+<fieldset formArrayName="guests">
+    <legend>Accompagnants</legend>
+    <button (click)="addNewGuestForm()">+</button>
+    <fieldset *ngFor="let guestForm of getGuestArray().controls; let i = index">
+        <legend>Accompagnant {{i+1}}</legend>
+        <div [formGroupName]="i">
+            <label [for]="'guest-' +i+' -fn'">Firstname</label>
+            <input type="text" [id]="'guest-' +i +'-fn'" formControlName="firstname">
+            <div>
+                <label [for]="'guest- + i +-ln'">Lastname</label>
+                <input type="text" [id]="'guest-' +i+' -ln'" formControlName="lastname">
+            </div>
+            <div>
+                <label [for]="'guest-'+i+'-bd'">Birthdate</label>
+                <input type="date" [id]="'guest-' +i+ '-fn'" formControlName="birthdate">
+            </div>
+        </div>
+    </fieldset>
+</fieldset>
+<button type="submit">Register</button>
+</form>

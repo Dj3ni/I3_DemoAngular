@@ -18,7 +18,8 @@ export class NavMenuComponent {
         {title:"Les pipes", url:"/demo/demo04"},
         {title:"Les directives", url:"/demo/demo05"},
         {title:"Les Input", url:"/demo/demo06"},
-        {title:"Les Services", url:"/demo/demo07"}
+        {title:"Les Services", url:"/demo/demo07"},
+        {title:"Les Formulaires", url:"/demo/demo08"}
 
       ], isVisible: false},
       {title : "Exercices", url:"/exercise", children:[

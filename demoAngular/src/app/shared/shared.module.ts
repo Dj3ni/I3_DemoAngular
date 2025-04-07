@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MathPowPipe } from './pipes/math-pow.pipe';
 import { ReverseTextPipe } from './pipes/reverse-text.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChronoFormatPipe } from './pipes/chrono-format.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ToggleChildMenuDirective } from './directives/toggle-child-menu.directive';
@@ -19,7 +19,8 @@ import { ToggleChildMenuDirective } from './directives/toggle-child-menu.directi
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     FormsModule,
@@ -27,7 +28,8 @@ import { ToggleChildMenuDirective } from './directives/toggle-child-menu.directi
     MathPowPipe,
     ChronoFormatPipe,
     HighlightDirective,
-    ToggleChildMenuDirective
+    ToggleChildMenuDirective,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { 
