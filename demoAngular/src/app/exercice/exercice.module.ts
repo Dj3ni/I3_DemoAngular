@@ -15,6 +15,9 @@ import { CartV2Component } from './components/cart-v2/cart-v2.component';
 import { AddToCartV2Component } from './components/add-to-cart-v2/add-to-cart-v2.component';
 import { ExeEventComponent } from './components/exe-event/exe-event.component';
 import { FormsModule } from '@angular/forms';
+import { ExelocalstorageComponent } from './components/exelocalstorage/exelocalstorage.component';
+import { CartlocalstorageComponent } from './components/cartlocalstorage/cartlocalstorage.component';
+import { ProductlocalstorageComponent } from './components/productlocalstorage/productlocalstorage.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { FormsModule } from '@angular/forms';
     ShoplistV2Component,
     CartV2Component,
     AddToCartV2Component,
-    ExeEventComponent
+    ExeEventComponent,
+    ExelocalstorageComponent,
+    CartlocalstorageComponent,
+    ProductlocalstorageComponent
   ],
   imports: [
     CommonModule,

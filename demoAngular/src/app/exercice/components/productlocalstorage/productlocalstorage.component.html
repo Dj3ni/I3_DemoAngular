@@ -1,0 +1,25 @@
+<!-- <p>{{productName}}</p> -->
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="productName">ProductName</label>
+        <input type="text" formControlName="productName">
+    </div>
+    
+    <div>
+        <label for="quantity">Quantity:</label>
+
+        <ng-container *ngIf="inCart; else notInCart">
+            <input type="number" id = "quantity" formControlName="quantity">                 
+        </ng-container>
+        <ng-template #notInCart>
+            <select name="quantity" id="quantity">
+                <option
+                *ngFor="let item of optionList"
+                >{{item}}
+                </option>
+            </select>
+        </ng-template>
+    </div>
+    <button type="submit">Acheter</button>
+</form>

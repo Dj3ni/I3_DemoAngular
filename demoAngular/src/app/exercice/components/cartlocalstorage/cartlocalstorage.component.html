@@ -1,0 +1,11 @@
+
+ <h1>Votre panier</h1>
+ <ul *ngIf="cart.length > 0 else noCart">
+     <li *ngFor="let prod of cart">{{prod.title}} : {{prod.quantity}} | 
+         <button (click)="remove(prod.title)">🚮</button>
+     </li>
+ </ul>
+ 
+ <ng-template #noCart>
+     <p>Votre panier est vide...</p>
+ </ng-template>

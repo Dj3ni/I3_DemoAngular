@@ -8,6 +8,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { ChronoComponent } from './exercice/components/chrono/chrono.component';
 import { NavLinkComponent } from './components/nav-link/nav-link.component';
 import { NavLinkWithChildrenComponent } from './components/nav-link-with-children/nav-link-with-children.component';
+import { CartlocalstorageComponent } from './exercise/components/cartlocalstorage/cartlocalstorage.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NavLinkWithChildrenComponent } from './components/nav-link-with-childre
     HomeComponent,
     NavMenuComponent,
     NavLinkComponent,
-    NavLinkWithChildrenComponent
+    NavLinkWithChildrenComponent,
+    CartlocalstorageComponent
   ],
   imports: [
     BrowserModule,

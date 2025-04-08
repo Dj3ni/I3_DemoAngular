@@ -30,6 +30,7 @@ export class NavMenuComponent {
         {title:"Chrono", url:"/exercise/chrono"},
         {title:"Cart", url:"/exercise/cart"},
         {title:"Event", url:"/exercise/event"},
+        {title:"Exe Local Storage", url:"/exercise/localstorage"}
 
       ], isVisible: false}
 
