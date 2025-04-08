@@ -8,7 +8,7 @@ const KEY: string = 'guests';
   providedIn: 'root'
 })
 export class GuestsSessionService{
-  private guests : IPerson[] = [];
+  private guests : IPerson[];
 
   constructor() { 
     this.guests = this.getGuests()
@@ -22,6 +22,6 @@ export class GuestsSessionService{
     this.guests = this.getGuests()
     if(this.guests.indexOf(newGuest) > -1) throw new Error('Already invited')
     this.guests.push(newGuest)
-    sessionStorage.setItem(KEY, JSON.stringify(this.getGuests))
+    sessionStorage.setItem(KEY, JSON.stringify(this.guests))
   }
 }
