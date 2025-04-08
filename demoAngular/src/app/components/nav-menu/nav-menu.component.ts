@@ -19,7 +19,8 @@ export class NavMenuComponent {
         {title:"Les directives", url:"/demo/demo05"},
         {title:"Les Input", url:"/demo/demo06"},
         {title:"Les Services", url:"/demo/demo07"},
-        {title:"Les Formulaires", url:"/demo/demo08"}
+        {title:"Les Formulaires", url:"/demo/demo08"},
+        {title:"Le local storage", url:"/demo/demo09"},
 
       ], isVisible: false},
       

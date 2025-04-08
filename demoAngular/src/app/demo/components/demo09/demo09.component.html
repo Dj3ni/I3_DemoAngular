@@ -1,0 +1,24 @@
+<h1>LocalStorage</h1>
+<h2>Guests List</h2>
+<ul *ngIf="guests.length > 0; else noList">
+    <li *ngFor="let guest of guests">{{guest.firstname}} {{guest.lastname}}</li>
+</ul>
+<ng-template #noList>
+    <p>Pas d'invité actuellement.</p>
+</ng-template>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+<fieldset>
+    <Legend>Invite</Legend>
+    <div>
+        <label for="firstname">Firstname</label>
+        <input type="text" id="firstname" formControlName="guestFirstName">
+    </div>
+    <div>
+        <label for="lastname">Lastname</label>
+        <input type="text" id="lastname" formControlName="guestLastName">
+    </div>
+</fieldset>
+<button type="submit">Invite</button>
+
+</form>
