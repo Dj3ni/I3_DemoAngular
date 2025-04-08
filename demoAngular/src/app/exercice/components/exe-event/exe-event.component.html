@@ -1,4 +1,4 @@
-<h1>Exe event</h1>
+<h1>Event planner</h1>
 <p>Création d'événement (anniversaire, fête, etc.) :
     L'utilisateur doit introduire un nom de 2 à 16 caractères.
     L'utilisateur doit introduire une description non obligatoire, mais si présente, de moins de 512 caractères (avec multilignes).
@@ -11,27 +11,67 @@
     Le formulaire doit prévenir de tout problème de contenu, empêcher la validation si non valide.
 </p>
 
-<form>
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
     <fieldset>
         <legend>Creation d'évènement</legend>
         <div>
-            <label for="">Nom de l'évènement *</label>
-            <input type="text" id="">
+            <label for="eventName">Nom de l'évènement *</label>
+            <input type="text" id="eventName" formControlName="title">
+            <div 
+                    style="color:red; background-color: rgb(255,200,200);padding: 3px; border-radius: 5px;"
+                    *ngIf="eventForm.get('title')?.errors && eventForm.get('title')?.touched">
+                    <p 
+                        *ngIf="eventForm.get('title')?.getError('required')">
+                        Ce champ est obligatoire</p>
+                    <p
+                        *ngIf="eventForm.get('title')?.getError('minlength') && eventForm.get('title')?.touched">Ce champ doit contenir au minimum 2 caractères</p>
+                    <p
+                    *ngIf="eventForm.get('title')?.getError('maxlength') && eventForm.get('title')?.touched">Ce champ doit contenir max 16 caractères</p>
+            </div>
         </div>
         <div>
-            <label for="">Description</label>
-            <textarea type="text"></textarea>
+            <label for="description">Description</label>
+            <textarea type="text" id ="description" formControlName="description"></textarea>
+            <div>{{eventForm.value.description?.length ?? 0}}/512</div>
+            <div 
+                    style="color:red; background-color: rgb(255,200,200);padding: 3px; border-radius: 5px;"
+                    *ngIf="eventForm.get('description')?.errors && eventForm.get('description')?.pristine">
+                    <p
+                    *ngIf="eventForm.get('description')?.getError('maxlength') && eventForm.get('title')?.touched">Ce champ doit contenir max 512 caractères</p>
+            </div>
+            
         </div>
-        <div>
-            <input type="checkbox" id="allDay">
-            <label for="allDay">Journée entière</label>
-        </div>
-        <div *ngIf="">
-            <label for="">Date *</label>
-            <input type="datetime-local">
-        </div>        
+        <fieldset>
+            <legend>Horaire</legend>
+            <div>
+                <label for="">Date *</label>
+                <input type="date" formControlName ="date">
+                <div 
+                    style="color:red; background-color: rgb(255,200,200);padding: 3px; border-radius: 5px;"
+                    *ngIf="eventForm.get('description')?.errors && eventForm.get('description')?.pristine">
+                    <p 
+                        *ngIf="eventForm.get('date')?.getError('required')">
+                        Ce champ est obligatoire</p>
+            </div>
+                
+            </div> 
+            <div>
+                <input type="checkbox" id="allDay" formControlName="allDay">
+                <label for="allDay">Journée entière</label>
+            </div>
+            <fieldset *ngIf="!eventForm.value.allDay">
+                <div>
+                    <label for="startTime">Débute à: </label>
+                    <input type="time" id="startTime" formControlName="startTime">
+                </div>
+                <div>
+                    <label for="endTime">Termine à: </label>
+                    <input type="time" id="endTime" formControlName="endTime">
+                </div>
+            </fieldset>              
+        </fieldset>               
     </fieldset>
-    <button type="submit" onsubmit="submit()">Créer l'évènement</button>
+    <button type="submit" onsubmit="submit()" [disabled]="!eventForm.valid">Créer l'évènement</button>
 
 </form>
 
